@@ -47,15 +47,22 @@ final class BoardFoot {
             if (boardWidthString.isEmpty() || boardHeightString.isEmpty()) {
                 System.out.println(invalidInput);
             } else {
-                final float boardWidthFloat = Float.parseFloat(boardWidthString);
-                final float boardHeightFloat = Float.parseFloat(boardHeightString);
+                final float boardWidthFloat =
+                    Float.parseFloat(boardWidthString);
+                final float boardHeightFloat =
+                    Float.parseFloat(boardHeightString);
                 if (boardWidthFloat < 0 || boardHeightFloat < 0) {
                     System.out.println(invalidInput);
                 } else {
                     // process
-                    final float boardLength = BoardFootProgram(boardWidthFloat, boardHeightFloat);
+                    final float boardLength = calculateBoardFoot(
+                        boardWidthFloat, boardHeightFloat
+                    );
                     // output
-                    System.out.println("The wood should be " + boardLength + " inch(es) long.");
+                    System.out.println(
+                        "The wood should be " + boardLength
+                        + " inch(es) long."
+                    );
                 }
             }
         } catch (NumberFormatException ex) {
@@ -65,11 +72,15 @@ final class BoardFoot {
     }
 
     /**
-    * The starting BoardFootProgram() function.
+    * Calculates the length of a board foot based on its width and height.
     *
-    * @param args No args will be used
+    * @param boardWidthFloat  The width of the board in inches.
+    * @param boardHeightFloat The height of the board in inches.
+    * @return The length of the board foot.
     */
-    public static float BoardFootProgram(float boardWidthFloat, float boardHeightFloat) {
+    public static float calculateBoardFoot(
+        float boardWidthFloat, float boardHeightFloat
+    ) {
         final float boardLength = 144 / (boardWidthFloat * boardHeightFloat);
         return boardLength;
     }
