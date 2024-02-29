@@ -46,41 +46,31 @@ final class BoardFoot {
         try {
             if (boardWidthString.isEmpty() || boardHeightString.isEmpty()) {
                 System.out.println("Invalid Input.");
-                boolean validInput = false;
             } else {
-                userGuessInt = Integer.parseInt(userGuessString)
-                if () {
-                    
+                final float boardWidthInt = Float.parseFloat(boardWidthString);
+                final float boardHeightInt = Float.parseFloat(boardHeightString);
+                if (boardWidthInt < 0 || boardWidthInt < 0) {
+                    System.out.println("Invalid Input.");
+                } else {
+                    // process
+                    final float boardLength = BoardFootProgram(boardWidthInt, boardHeightInt);
+                    // output
+                    System.out.println("The wood should be" + boardLength + "inch(es) long.");
                 }
             }
         } catch (NumberFormatException ex) {
             System.out.println("Invalid Input.");
         }
-
-
+        System.out.println("\nDone.");
     }
-     /**
-    * The starting main() function.
+    
+    /**
+    * The starting BoardFootProgram() function.
     *
     * @param args No args will be used
     */
-    public static void BoardFootProgram(String[] args) {
-      
-        // input
-        System.out.print("Enter the width(inches): ");
-        final String boardWidth = scanner.nextLine().trim();
-        System.out.print("Enter the height(inches): ");
-        final String boardHeight = scanner.nextLine().trim();
-
-        try {
-            if (userGuessString.isEmpty()) {
-        System.out.println("Invalid Input.");
-                
-        }
-        } catch (NumberFormatException ex) {
-        System.out.println(invalidInputString);
-        }
-
-
+    public static BoardFootProgram(float boardWidthInt, float boardHeightInt) {
+        final float boardLength = 144 / (boardWidthFloat * boardHeightFloat);
+        return boardLength
     }
 }
