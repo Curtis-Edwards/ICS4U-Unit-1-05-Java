@@ -1,13 +1,12 @@
 /*
  * will then calculate the length, so that the result
- * is exactly 1 board foot and return that value. 
+ * is exactly 1 board foot and return that value.
  *
  * @author  Curtis Edwards
  * @version 1.0
  * @since   2024-02-27
  */
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -35,6 +34,7 @@ final class BoardFoot {
     public static void main(String[] args) {
         // variables
         final Scanner scanner = new Scanner(System.in);
+        final String invalidInput = "Invalid input.";
 
         // input
         System.out.print("Enter the width(inches): ");
@@ -45,25 +45,25 @@ final class BoardFoot {
         // error check
         try {
             if (boardWidthString.isEmpty() || boardHeightString.isEmpty()) {
-                System.out.println("Invalid Input.");
+                System.out.println(invalidInput);
             } else {
                 final float boardWidthFloat = Float.parseFloat(boardWidthString);
                 final float boardHeightFloat = Float.parseFloat(boardHeightString);
                 if (boardWidthFloat < 0 || boardHeightFloat < 0) {
-                    System.out.println("Invalid Input.");
+                    System.out.println(invalidInput);
                 } else {
                     // process
                     final float boardLength = BoardFootProgram(boardWidthFloat, boardHeightFloat);
                     // output
-                    System.out.println("The wood should be" + boardLength + "inch(es) long.");
+                    System.out.println("The wood should be " + boardLength + " inch(es) long.");
                 }
             }
         } catch (NumberFormatException ex) {
-            System.out.println("Invalid Input.");
+            System.out.println(invalidInput);
         }
         System.out.println("\nDone.");
     }
-    
+
     /**
     * The starting BoardFootProgram() function.
     *
