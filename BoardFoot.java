@@ -47,13 +47,13 @@ final class BoardFoot {
             if (boardWidthString.isEmpty() || boardHeightString.isEmpty()) {
                 System.out.println("Invalid Input.");
             } else {
-                final float boardWidthInt = Float.parseFloat(boardWidthString);
-                final float boardHeightInt = Float.parseFloat(boardHeightString);
-                if (boardWidthInt < 0 || boardWidthInt < 0) {
+                final float boardWidthFloat = Float.parseFloat(boardWidthString);
+                final float boardHeightFloat = Float.parseFloat(boardHeightString);
+                if (boardWidthFloat < 0 || boardHeightFloat < 0) {
                     System.out.println("Invalid Input.");
                 } else {
                     // process
-                    final float boardLength = BoardFootProgram(boardWidthInt, boardHeightInt);
+                    final float boardLength = BoardFootProgram(boardWidthFloat, boardHeightFloat);
                     // output
                     System.out.println("The wood should be" + boardLength + "inch(es) long.");
                 }
@@ -69,7 +69,7 @@ final class BoardFoot {
     *
     * @param args No args will be used
     */
-    public static float BoardFootProgram(float boardWidthInt, float boardHeightInt) {
+    public static float BoardFootProgram(float boardWidthFloat, float boardHeightFloat) {
         final float boardLength = 144 / (boardWidthFloat * boardHeightFloat);
         return boardLength;
     }
