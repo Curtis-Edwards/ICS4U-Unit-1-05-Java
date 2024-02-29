@@ -34,7 +34,7 @@ final class BoardFoot {
     */
     public static void main(String[] args) {
         // variables
-        boolean validInput = true;
+        final Scanner scanner = new Scanner(System.in);
 
         // input
         System.out.print("Enter the width(inches): ");
