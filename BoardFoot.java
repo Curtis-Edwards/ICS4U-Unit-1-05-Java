@@ -69,8 +69,8 @@ final class BoardFoot {
     *
     * @param args No args will be used
     */
-    public static BoardFootProgram(float boardWidthInt, float boardHeightInt) {
+    public static float BoardFootProgram(float boardWidthInt, float boardHeightInt) {
         final float boardLength = 144 / (boardWidthFloat * boardHeightFloat);
-        return boardLength
+        return boardLength;
     }
 }
