@@ -27,6 +27,21 @@ final class BoardFoot {
     }
 
     /**
+    * Calculates the length of a board foot based on its width and height.
+    *
+    * @param boardWidthFloat  The width of the board in inches.
+    * @param boardHeightFloat The height of the board in inches.
+    * @return The length of the board foot.
+    */
+    public static float calculateBoardFoot(
+        float boardWidthFloat, float boardHeightFloat) {
+        final int boardFoot = 144;
+        final float boardLength = boardFoot / (boardWidthFloat * boardHeightFloat);
+
+        return boardLength;
+    }
+
+    /**
     * The starting main() function.
     *
     * @param args No args will be used
@@ -56,7 +71,7 @@ final class BoardFoot {
                 } else {
                     // process
                     final float boardLength = calculateBoardFoot(
-                        boardWidthFloat, boardHeightFloat
+                        float boardWidthFloat, float boardHeightFloat
                     );
                     // output
                     System.out.println(
@@ -69,19 +84,5 @@ final class BoardFoot {
             System.out.println(invalidInput);
         }
         System.out.println("\nDone.");
-    }
-
-    /**
-    * Calculates the length of a board foot based on its width and height.
-    *
-    * @param boardWidthFloat  The width of the board in inches.
-    * @param boardHeightFloat The height of the board in inches.
-    * @return The length of the board foot.
-    */
-    public static float calculateBoardFoot(
-        float boardWidthFloat, float boardHeightFloat
-    ) {
-        final float boardLength = 144 / (boardWidthFloat * boardHeightFloat);
-        return boardLength;
     }
 }
